@@ -116,9 +116,13 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/data/ObjectStore", "dojo/
 			
 			//Records- Start
 			CREATE_RECORD_TITLE:'Create Record',
-			MODIFY_RECORD_TITLE:'View/Modify Record'
+			MODIFY_RECORD_TITLE:'Modify Record',
 			//Records - End
-			
+				
+			//Forms module 
+			CREATE_FORMS_MODULE_TITLE:'Create Forms Module Entry',
+			MODIFY_FORMS_MODULE_TITLE:'Modify Forms Module Entry'
+		
 			
 		},
 		getConstantValue : function(cname){

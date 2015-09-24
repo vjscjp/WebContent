@@ -289,8 +289,8 @@ define(["dojo/dom", "dojo/on", "dojo/store/JsonRest", "dojo/_base/json", "dojo/d
                 
                 // forms Module tab click
                 on(dom.byId("show_formsModule"), "click", function (e) {
-                    self.transitionTo(e, "recordsNav", null);	
-                    self.transitionTo(e, "records", null);	
+                    self.transitionTo(e, "formsModuleNav", null);	
+                    self.transitionTo(e, "formsModule", null);	
                 }); 
                 
                 // Promotions tab click

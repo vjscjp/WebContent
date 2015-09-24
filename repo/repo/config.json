@@ -461,16 +461,11 @@
         }
     },      
     
-    "defaultView": "main+formsCreate+formsNav",
+    "defaultView": "main+records+recordsNav",
     "views": {
         "main": {
             "template": "./views/main.html",
             "controller": "./controllers/main.js"
-        },
-        "recordsSearch": {
-            "template": "./views/records/records.html",
-            "constraint": "frmsContent",
-            "controller": "./controllers/records/records.js"
         },
         "recordsNav": {
             "template": "./views/records/recordsNav.html",
@@ -482,26 +477,19 @@
             "constraint": "frmsContent",
             "controller": "./controllers/records/records.js"
         },
-        "recordsViewModify": {
-            "template": "./views/records/recordsViewModify.html",
-            "constraint": "frmsContent",
-            "controller": "./controllers/records/recordsViewModify.js"
+        
+        "formsModuleNav": {
+            "template": "./views/formsModule/formsModuleNav.html",
+            "constraint": "frmsNav",
+            "controller": "./controllers/formsModule/formsModuleNav.js"
         },
-        "recordsHistory": {
-            "template": "./views/records/recordsHistory.html",
+        "formsModule": {
+            "template": "./views/formsModule/formsModule.html",
             "constraint": "frmsContent",
-            "controller": "./controllers/records/recordsHistory.js"
+            "controller": "./controllers/formsModule/formsModule.js"
         },
-        "recordComments": {
-            "template": "./views/records/recordComments.html",
-            "constraint": "frmsContent",
-            "controller": "./controllers/records/recordComments.js"
-        },
-        "duplicateRecord": {
-            "template": "./views/records/duplicateRecordConfirmation.html",
-            "constraint": "frmsContent",
-            "controller": "./controllers/records/duplicateRecordConfirmation.js"
-        },
+        
+        
         "formsCreate": {
             "template": "./views/forms/forms.html",
             "constraint": "frmsContent",

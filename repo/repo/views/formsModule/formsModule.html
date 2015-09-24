@@ -1,0 +1,122 @@
+<div>
+    <div id = "formModuleDetails" class="l_main_area">
+		<h4><div data-dojo-attach-point="viewTitle"></div></h4>
+		<div data-dojo-attach-point="formsModuleSearchContainer"></div>
+		<form id="documentFormModule" name="documentFormModule" data-dojo-attach-point="documentFormModule" data-dojo-type="dijit/form/Form" enctype="multipart/form-data" action="" method="">
+            <!--Form Components -->
+			<div id= "documentFormModule_prereq" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'pr_req'">
+				<div class="l_row">
+					<div class="l_column_thirds"> 
+						<label for="docFrmMod_num_reqre">*num_reqre</label>
+						<div name="docFrmMod_num_reqre" data-dojo-attach-point="docFrmMod_num_reqre"  data-dojo-type="dijit/form/ValidationTextBox" ></div>
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_name_reqre">*name_reqre</label>
+						<div name="docFrmMod_name_reqre" data-dojo-attach-point="docFrmMod_name_reqre"  data-dojo-type="dijit/form/ValidationTextBox" ></div>
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_desc_reqre">*desc_reqre</label>
+						<div name="docFrmMod_desc_reqre" data-dojo-attach-point="docFrmMod_desc_reqre" data-dojo-type="dijit/form/ValidationTextBox" ></div>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="l_row">
+					<div class="l_column_thirds">
+						<label for="docFrmMod_num_reqre_full">*num_reqre_full</label>
+						<input name="docFrmMod_num_reqre_full" data-dojo-attach-point="docFrmMod_num_reqre_full" data-dojo-type="dijit/form/ValidationTextBox" />
+					</div>
+					<div class="l_column_thirds">
+						<div class='l_pad'>
+							<input class="alignleft,l_pad_top" data-dojo-type="dijit/form/CheckBox" name="docFrmMod_promoInd" data-dojo-attach-point="docFrmMod_promoInd"> <span style='padding-left:10px'>Mark For Promotion</span></input>
+						</div>					
+					</div>
+				</div>
+				
+			 </div>
+			 
+			<div class="l_row">Grid will go here</div>
+			
+			<div id= "documentFormModule_title" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'pr_plan_st_req'">
+				<div class="l_row">
+					<div class="l_column_thirds"> 
+						<label for="docFrmMod_code_abbr_state">*code_abbrv_state(s)</label>
+						<div name="docFrmMod_code_abbr_state" disabled="disabled" style="width:240px;" data-dojo-attach-point="docFrmMod_code_abbr_state"  data-dojo-type="common/widgets/ValidationTextArea" ></div>
+						
+						
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_num_id_chnl">num_id_chnl(s)</label>
+						<select name="docFrmMod_classtnCd" data-dojo-attach-point="docFrmMod_classtnCd" data-dojo-type="dijit/form/FilteringSelect"></select>
+						
+						
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_code_prod">code_prod(s)</label>
+						<div name="docFrmMod_code_prod" disabled="disabled" style="width:240px;"data-dojo-attach-point="docFrmMod_code_prod" data-dojo-type="common/widgets/ValidationTextArea" ></div>
+						
+											
+					</div>
+				</div>
+				<div class="l_row">
+					<div class="l_column_thirds">
+						<div>&nbsp;</div>
+						<select data-dojo-attach-point="docFrmMod_code_abbr_state_select" data-dojo-type="dojox/form/CheckedMultiSelect"
+							   data-dojo-props="dropDown: true, multiple: true, required: true, sortByLabel:false"  name="docFrmMod_code_abbr_state_select">
+						</select>
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_classtnCd">*code_clast_reqre</label>
+						<select  name="docFrmMod_classtnCd" data-dojo-attach-point="docFrmMod_classtnCd" data-dojo-type="dijit/form/FilteringSelect"></select>
+						
+					</div>
+					<div class="l_column_thirds">
+						<div>&nbsp;</div>
+						<select data-dojo-attach-point="docFrmMod_code_prod_select" data-dojo-type="dojox/form/CheckedMultiSelect"
+							   data-dojo-props="dropDown: true, multiple: true, required: true, sortByLabel:false"  name="docFrmMod_code_prod_select">
+						</select>	
+					</div>
+				
+				</div>
+				
+				
+				
+				<div class="l_row">
+					<div class="l_column_thirds"> 
+						<label for="docFrmMod_code_type_state">*code_type_state</label>
+						<select name="docFrmMod_code_type_state" data-dojo-attach-point="docFrmMod_code_type_state" data-dojo-type="dijit/form/FilteringSelect"></select>
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_subclasstnCd">*code_clast_sub_reqre</label>
+						<select  name="docFrmMod_subclasstnCd" data-dojo-attach-point="docFrmMod_subclasstnCd" data-dojo-type="dijit/form/FilteringSelect"></select>
+						
+						<label for="docFrmMod_code_type_lang">*code_type_lang</label>
+						<select name="docFrmMod_code_type_lang" data-dojo-attach-point="docFrmMod_code_type_lang" data-dojo-type="dijit/form/FilteringSelect"></select>
+					</div>
+					<div class="l_column_thirds">
+						<label for="docFrmMod_date_eff_prod">*date_eff_prod</label>						
+						<select name="docFrmMod_date_eff_prod" placeholder="mm/dd/yyyy" data-dojo-attach-point="docFrmMod_date_eff_prod" data-dojo-type="dijit/form/DateTextBox"></select>
+						
+						<label for="docFrmMod_date_prod_prod">*date_prod_prod</label>						
+						<select name="docFrmMod_date_prod_prod" placeholder="mm/dd/yyyy" data-dojo-attach-point="docFrmMod_date_prod_prod" data-dojo-type="dijit/form/DateTextBox"></select>
+					</div>
+				</div>
+				<div class="l_row_pad">
+				  
+				  <button label='Add' data-dojo-attach-point="add_btn" type="button" data-dojo-type="dijit/form/Button"></button>
+				  <button label='Reset' data-dojo-attach-point="resetForm_btn" type="reset" data-dojo-type="dijit/form/Button"></button>
+				</div>	
+				
+			 </div>
+        	<div class="l_row_pad">
+			  
+			  <button label='Save' data-dojo-attach-point="saveForm_btn" type="button" data-dojo-type="dijit/form/Button"></button>
+			  <button label='Cancel' data-dojo-attach-point="cancelForm_btn" type="button" data-dojo-type="dijit/form/Button"></button>
+			</div>	
+        </form>
+		
+    </div>
+    
+</div>
