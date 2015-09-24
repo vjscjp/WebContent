@@ -50,9 +50,9 @@ define(["dojo/_base/lang","dijit/form/Form","dojox/mvc/at","dojox/mvc/Output",
 				}else{
 					
 					_self.viewTitle.innerHTML =FRMS.FrmsConstants.constants.CREATE_RECORD_TITLE;
-					//_self.commentRecord.style.visibility = "visible";
+					_self.commentRecord.style.visibility = "visible";
 					//_self.historyBtn_recordsCreate.style.visiblity = "hidden";
-					//_self.ricSection.style.marginTop = "0px";
+					_self.ricSection.style.marginTop = "0px";
 					//dojo.style(dijit.byId('commentRecord').domNode, {visibility:'visible',marginTop:'0px'});
 					dojo.style(dijit.byId('historyBtn_recordsCreate').domNode, {visibility:'hidden',marginLeft:'-105px'});
 				}
