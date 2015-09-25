@@ -9,32 +9,22 @@ define(["dojo/Stateful","dojo/domReady!"],
         "use strict";
 			
 		var DocumentInstance =function(){
-			this.frmRecNum='';
-			this.frmRvnDt='';
-			this.recIdxNum='';
-			this.docTitl='';
-			this.docDesc='';
-			this.classtnCd='';
-			this.subclasstnCd='';
-			this.busFncCd='';
-			this.frmTypeCd='';
-			this.cntntTypeCd='';
-			this.secLvlCd='';
-			this.timingReqrmntCd='';
-			this.dtTypeCd='';
-			this.lunarDocTypeCd='';
-			this.docUsageInu='';
-			this.pgCntNum='';
-			this.rtrnToHomeOffcInd='0';
-			this.trnslInd='1';
-			this.logoInd='0';
-			this.ofeSigInd='1';
-			this.docTypeCd='';
-			this.extlRecInd='';
-			this.promoInd='0';
-			this.docGntImplnDt=null;
-			this.promoImplnDt=null;
-			this.docFrmUseDt=null;
+			this.docFrmMod_num_reqre='';
+			this.docFrmMod_name_reqre='';
+			this.docFrmMod_desc_reqre='';
+			this.docFrmMod_num_reqre_full='';
+			this.docFrmMod_promoInd='';
+			this.docFrmMod_code_abbr_state='';
+			this.docFrmMod_num_id_chnl='';
+			this.docFrmMod_code_prod='';
+			this.docFrmMod_code_abbr_state_select='';
+			this.docFrmMod_classtnCd='';
+			this.docFrmMod_code_prod_select='';
+			this.docFrmMod_code_type_state='';
+			this.docFrmMod_subclasstnCd='';
+			this.docFrmMod_code_type_lang='';
+			this.docFrmMod_date_eff_prod='';
+			this.docFrmMod_date_prod_prod='';
 		};
 		
         return {
@@ -73,104 +63,35 @@ define(["dojo/Stateful","dojo/domReady!"],
 					return false;
 				};
 				return {
-					// forms Search fields				
-					frmRecNumSrch:{
+					// forms Module Search fields				
+					docFrmMod_num_reqre:{
 						properties:{
 							required:true,
 							pattern:alphaNumericPattern,
-							maxLength:100,
+							maxLength:20
 						}
 					},
-					frmRvnDtSrch:{
+					docFrmMod_name_reqre:{
 						properties:{
 							required:false,
-							placeholder:frmsConstants.DT_FMT_SHORT,
-							maxLength:5
+							pattern:alphaNumericPattern,
+							maxLength:60
 						}
 					},
-					// form view fields
-					frmRecNum:{
-						reqForShell:true,
-						reqForPromotion:true,
+					// form Module view fields
+					docFrmMod_desc_reqre:{
 						properties:{
 							pattern:alphaNumericPattern,
-							maxLength:100,
+							maxLength:30
 						}
 					},
-					classtnCd:{
-						reqForShell:true,
-						reqForPromotion:true
-					},
-					docTitl:{
-						reqForShell:false,
-						reqForPromotion:false,
+					docFrmMod_num_reqre_full:{
 						properties:{
 							pattern:alphaNumericPattern,
 							maxLength:100
 						}
 					},
-					frmRvnDt:{
-						reqForShell:false,
-						reqForPromotion:false,
-						properties:{
-							placeholder:frmsConstants.DT_FMT_SHORT,
-							maxLength:5
-						}
-					},
-					subclasstnCd:{
-						reqForShell:true,
-						reqForPromotion:true,
-					},
-					docUsageInu:{
-						reqForShell:false,
-						reqForPromotion:false,
-						properties:{
-							pattern:alphaNumericPattern,
-							maxLength:100,
-							style:'height:30px;width:242px;',
-							rows:4,
-							cols:34,
-							isValid:validateFn
-						}
-					},
-					docDesc:{
-						reqForShell:false,
-						reqForPromotion:true,
-						properties:{
-							pattern:alphaNumericPattern,
-							maxLength:30,
-							style:'height:30px;width:242px;',
-							rows:2,
-							cols:34,
-						}
-					},
-					frmTypeCd:{
-						reqForShell:true,
-						reqForPromotion:true
-					},
-					lunarDocTypeCd:{
-						reqForShell:false,
-						reqForPromotion:false
-					},
-					busFncCd:{
-						reqForShell:false,
-						reqForPromotion:false
-					},
-					pgCntNum:{
-						reqForShell:false,
-						reqForPromotion:true,
-						properties:{
-							pattern:numericPattern,
-							maxLength:4
-						}
-					},
-					secLvlCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					logoInd:{
-						reqForShell:false,
-						reqForPromotion:true,
+					docFrmMod_promoInd:{
 						customMapping:{
 							converter:FRMS.FrmsUtils.ZeroOneConverter,
 							mappingAttr:'checked'
@@ -179,105 +100,63 @@ define(["dojo/Stateful","dojo/domReady!"],
 							isValid:validateFn
 						}
 					},
-					trnslInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
+					docFrmMod_code_abbr_state:{
 						properties:{
-							isValid:validateFn
+							readOnly:true,
+							style:'height:30px;width:242px;'
 						}
 					},
-					timingReqrmntCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					cntntTypeCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					ofeSigInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
+					docFrmMod_num_id_chnl:{
 						properties:{
-							isValid:validateFn
+							required: false
 						}
 					},
-					rtrnToHomeOffcInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
+					docFrmMod_code_prod:{
 						properties:{
-							isValid:validateFn
+							readOnly:true,
+							style:'height:30px;width:242px;'
 						}
 					},
-					formTimCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					promoImplnDt:{
-						reqForShell:false,
-						reqForPromotion:false,
+					docFrmMod_code_abbr_state_select:{
 						properties:{
-							placeholder:frmsConstants.DT_FMT_LONG
+							required: true
 						}
 					},
-					docGntImplnDt:{
-						reqForShell:false,
-						reqForPromotion:false,
+					docFrmMod_classtnCd:{
 						properties:{
-							placeholder:frmsConstants.DT_FMT_LONG
+							required: true
 						}
 					},
-					cmntTxt:{
-						reqForShell:false,
-						reqForPromotion:false,
+					docFrmMod_code_prod_select:{
 						properties:{
-							pattern:alphaNumericPattern,
-							maxLength:1000,
-							style:'height:30px;width:242px;',
-							rows:2,
-							cols:34,
-							isValid:validateFn
-						}
-
-					},
-					docFrmUseDt:{
-						reqForShell:false,
-						reqForPromotion:false,
-						properties:{
-							placeholder:frmsConstants.DT_FMT_LONG
+							required: true
 						}
 					},
-					promoInd:{
-						reqForShell:false,
-						reqForPromotion:false,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
+					docFrmMod_code_type_state:{
 						properties:{
-							isValid:validateFn
+							required: true
 						}
 					},
-					extlRecInd:{
-						reqForShell:false,
-						reqForPromotion:true,
+					docFrmMod_subclasstnCd:{
 						properties:{
-							disabled:true,
-							maxLength:10
+							required: true
 						}
-					}					
-					
+					},
+					docFrmMod_code_type_lang:{
+						properties:{
+							required: true
+						}
+					},
+					docFrmMod_date_eff_prod:{						
+						properties:{
+							"placeholder" :frmsConstants.DT_FMT_LONG
+						}
+					},
+					docFrmMod_date_prod_prod:{
+						properties:{							
+							required : false
+						}
+					}
 				};
 			}
         };

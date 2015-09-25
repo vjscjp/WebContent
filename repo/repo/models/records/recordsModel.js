@@ -9,32 +9,19 @@ define(["dojo/Stateful","dojo/domReady!"],
         "use strict";
 			
 		var DocumentInstance =function(){
-			this.frmRecNum='';
-			this.frmRvnDt='';
-			this.recIdxNum='';
-			this.docTitl='';
-			this.docDesc='';
-			this.classtnCd='';
-			this.subclasstnCd='';
-			this.busFncCd='';
-			this.frmTypeCd='';
-			this.cntntTypeCd='';
-			this.secLvlCd='';
-			this.timingReqrmntCd='';
-			this.dtTypeCd='';
-			this.lunarDocTypeCd='';
-			this.docUsageInu='';
-			this.pgCntNum='';
-			this.rtrnToHomeOffcInd='0';
-			this.trnslInd='1';
-			this.logoInd='0';
-			this.ofeSigInd='1';
-			this.docTypeCd='';
-			this.extlRecInd='';
-			this.promoInd='0';
-			this.docGntImplnDt=null;
-			this.promoImplnDt=null;
-			this.docFrmUseDt=null;
+			this.rec_txtRecordNumber='';
+			this.rec_txtRecordTitle='';
+			this.rec_ddlRecordSource='';
+			this.rec_ddlClass='';
+			this.rec_ddlSubClass='';
+			this.rec_effectiveDate=null;
+			this.rec_expirationDate=null;
+			this.rec_ddlNPPI='';
+			this.rec_ddlTimingCode='';
+			this.rec_txtLunarDocType='';
+			this.rec_txtInitialComment='';
+			this.rec_ric='';
+			this.rec_promoInd='';
 		};
 		
         return {
@@ -74,171 +61,84 @@ define(["dojo/Stateful","dojo/domReady!"],
 				};
 				return {
 					// forms Search fields				
-					frmRecNumSrch:{
-						properties:{
-							required:true,
-							pattern:alphaNumericPattern,
-							maxLength:100,
-						}
-					},
-					frmRvnDtSrch:{
-						properties:{
-							required:false,
-							placeholder:frmsConstants.DT_FMT_SHORT,
-							maxLength:5
-						}
-					},
+					
+					
 					// form view fields
-					frmRecNum:{
+					rec_txtRecordNumber:{
 						reqForShell:true,
 						reqForPromotion:true,
 						properties:{
 							pattern:alphaNumericPattern,
 							maxLength:100,
+							required: true
 						}
 					},
-					classtnCd:{
-						reqForShell:true,
-						reqForPromotion:true
-					},
-					docTitl:{
-						reqForShell:false,
-						reqForPromotion:false,
-						properties:{
-							pattern:alphaNumericPattern,
-							maxLength:100
-						}
-					},
-					frmRvnDt:{
-						reqForShell:false,
-						reqForPromotion:false,
-						properties:{
-							placeholder:frmsConstants.DT_FMT_SHORT,
-							maxLength:5
-						}
-					},
-					subclasstnCd:{
-						reqForShell:true,
-						reqForPromotion:true,
-					},
-					docUsageInu:{
-						reqForShell:false,
-						reqForPromotion:false,
+					rec_txtRecordTitle:{
+						reqForShell: false,
+						reqForPromotion: false,
 						properties:{
 							pattern:alphaNumericPattern,
 							maxLength:100,
-							style:'height:30px;width:242px;',
-							rows:4,
-							cols:34,
-							isValid:validateFn
+							required: false
 						}
 					},
-					docDesc:{
-						reqForShell:false,
-						reqForPromotion:true,
+					rec_ddlRecordSource:{
+						reqForShell : true,
+						reqForPromotion : true,
 						properties:{
-							pattern:alphaNumericPattern,
-							maxLength:30,
-							style:'height:30px;width:242px;',
-							rows:2,
-							cols:34,
+							required: true
 						}
 					},
-					frmTypeCd:{
+					rec_ddlClass:{
+						reqForShell : true,
+						reqForPromotion : true,
+						properties:{
+							required: true
+						}
+					},
+					rec_ddlSubClass:{
+						reqForShell : true,
+						reqForPromotion : true,
+						properties:{
+							required: true
+						}
+					},
+					rec_effectiveDate:{
+						reqForShell : true,
+						reqForPromotion : true,
+						properties:{
+							"placeholder" :frmsConstants.DT_FMT_LONG
+						}
+					},
+					rec_expirationDate:{
+						reqForShell : false,
+						reqForPromotion : false,
+						properties:{
+							"placeholder" :frmsConstants.DT_FMT_LONG
+						}
+					},
+					rec_ddlNPPI:{
 						reqForShell:true,
-						reqForPromotion:true
-					},
-					lunarDocTypeCd:{
-						reqForShell:false,
-						reqForPromotion:false
-					},
-					busFncCd:{
-						reqForShell:false,
-						reqForPromotion:false
-					},
-					pgCntNum:{
-						reqForShell:false,
 						reqForPromotion:true,
 						properties:{
-							pattern:numericPattern,
-							maxLength:4
+							required : false
 						}
 					},
-					secLvlCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					logoInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
-						properties:{
-							isValid:validateFn
-						}
-					},
-					trnslInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
-						properties:{
-							isValid:validateFn
-						}
-					},
-					timingReqrmntCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					cntntTypeCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					ofeSigInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
-						properties:{
-							isValid:validateFn
-						}
-					},
-					rtrnToHomeOffcInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						customMapping:{
-							converter:FRMS.FrmsUtils.ZeroOneConverter,
-							mappingAttr:'checked'
-						},
-						properties:{
-							isValid:validateFn
-						}
-					},
-					formTimCd:{
-						reqForShell:false,
-						reqForPromotion:true
-					},
-					promoImplnDt:{
+					rec_ddlTimingCode:{
 						reqForShell:false,
 						reqForPromotion:false,
 						properties:{
-							placeholder:frmsConstants.DT_FMT_LONG
+							required : false
 						}
 					},
-					docGntImplnDt:{
+					rec_txtLunarDocType:{
 						reqForShell:false,
 						reqForPromotion:false,
 						properties:{
-							placeholder:frmsConstants.DT_FMT_LONG
+							required : false
 						}
 					},
-					cmntTxt:{
+					rec_txtInitialComment:{
 						reqForShell:false,
 						reqForPromotion:false,
 						properties:{
@@ -251,14 +151,14 @@ define(["dojo/Stateful","dojo/domReady!"],
 						}
 
 					},
-					docFrmUseDt:{
+					rec_ric:{
 						reqForShell:false,
-						reqForPromotion:false,
+						reqForPromotion:true,
 						properties:{
-							placeholder:frmsConstants.DT_FMT_LONG
+							isValid:validateFn
 						}
 					},
-					promoInd:{
+					rec_promoInd:{
 						reqForShell:false,
 						reqForPromotion:false,
 						customMapping:{
@@ -268,15 +168,7 @@ define(["dojo/Stateful","dojo/domReady!"],
 						properties:{
 							isValid:validateFn
 						}
-					},
-					extlRecInd:{
-						reqForShell:false,
-						reqForPromotion:true,
-						properties:{
-							disabled:true,
-							maxLength:10
-						}
-					}					
+					}
 					
 				};
 			}
